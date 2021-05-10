@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://jfrogtraining.github.io/aws-ecs-workshop/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jfrogtraining.github.io/aws-ecs-workshop/1_prerequisites.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jfrogtraining.github.io/aws-ecs-workshop/2_devops_cloud.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jfrogtraining.github.io/aws-ecs-workshop/3_workshop.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jfrogtraining.github.io/aws-ecs-workshop/5_build_publish_app.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jfrogtraining.github.io/aws-ecs-workshop/6_view_results.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jfrogtraining.github.io/aws-ecs-workshop/7_deploy_ecs.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jfrogtraining.github.io/aws-ecs-workshop/8_conclusion.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jfrogtraining.github.io/aws-ecs-workshop/2_devops_cloud/21_continuous_integration_and_delivery.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jfrogtraining.github.io/aws-ecs-workshop/2_devops_cloud/22_binary_repository_management.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jfrogtraining.github.io/aws-ecs-workshop/2_devops_cloud/23_dev_sec_ops.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jfrogtraining.github.io/aws-ecs-workshop/2_devops_cloud/24_jfrog_platform_overview.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/41_aws_setup.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/42_code_setup.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/43_jfrog_setup.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jfrogtraining.github.io/aws-ecs-workshop/5_build_publish_app/51_npm.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jfrogtraining.github.io/aws-ecs-workshop/5_build_publish_app/52_docker.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jfrogtraining.github.io/aws-ecs-workshop/7_deploy_ecs/71_configure_ecs_secrets.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jfrogtraining.github.io/aws-ecs-workshop/7_deploy_ecs/72_configure_ecs_role.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jfrogtraining.github.io/aws-ecs-workshop/7_deploy_ecs/73_deploy_your_image.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jfrogtraining.github.io/aws-ecs-workshop/7_deploy_ecs/74_view_your_application.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/41_aws_setup/412_aws_event_account.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/41_aws_setup/413_self_paced_account.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/41_aws_setup/414_cloud9.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/41_aws_setup/415_create_role.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/41_aws_setup/416_attach_role_workspace.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/41_aws_setup/417_update_iam_settings.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/43_jfrog_setup/431_jfrog_free.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/43_jfrog_setup/432_api_key.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/43_jfrog_setup/433_jfrog_cli.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/43_jfrog_setup/434_configure_jfrog.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jfrogtraining.github.io/aws-ecs-workshop/categories.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jfrogtraining.github.io/aws-ecs-workshop/cleanup.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jfrogtraining.github.io/aws-ecs-workshop/resources.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jfrogtraining.github.io/aws-ecs-workshop/tags.html</loc>
+  </url>
+  
+</urlset>

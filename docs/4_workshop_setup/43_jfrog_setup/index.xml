@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JFrog Platform Setup on JFrog DevOps Modernization Workshop</title>
+    <link>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/43_jfrog_setup.html</link>
+    <description>Recent content in JFrog Platform Setup on JFrog DevOps Modernization Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language><atom:link href="https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/43_jfrog_setup/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Get a Free JFrog Platform Instance</title>
+      <link>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/43_jfrog_setup/431_jfrog_free.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/43_jfrog_setup/431_jfrog_free.html</guid>
+      <description>If you do not have access to a JFrog Platform instance, use the JFrog Platform Cloud Free Tier to get your own JFrog Platform instance with Artifactory and Xray.
+When signing up for the JFrog Platform Cloud Free Tier, ensure that you select AWS and the US West 2 (Oregon) region.
+  JFrog Platform Cloud Free Tier   </description>
+    </item>
+    
+    <item>
+      <title>Generate an API Key</title>
+      <link>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/43_jfrog_setup/432_api_key.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/43_jfrog_setup/432_api_key.html</guid>
+      <description>Remember your username and API Key. We will use it again with the JFrog CLI and to set up ECS to deploy your image.
+  Go to your JFrog Platform instance at https://[server name].jfrog.io. Refer to your JFrog Free Subscription Activation email if needed. Substitute your server name.  Login to your JFrog Platform instance with your credentials.  Once logged into your JFrog Platform instance, you will be presented with the landing page.</description>
+    </item>
+    
+    <item>
+      <title>Install and Configure the JFrog CLI</title>
+      <link>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/43_jfrog_setup/433_jfrog_cli.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/43_jfrog_setup/433_jfrog_cli.html</guid>
+      <description>JFrog CLI is a client that provides a simple CLI interface that automates the management of JFrog products. JFrog CLI works with JFrog Artifactory, JFrog Mission Control, JFrog Bintray and JFrog Xray (through their respective REST APIs) making your scripts more efficient and reliable. You can use the JFrog CLI to assist in your builds, create artifacts, promote artifacts, trigger security scans and much more. It is powerful to that you can use in your CI/CD process and general automation.</description>
+    </item>
+    
+    <item>
+      <title>Configure JFrog Artifactory and Xray</title>
+      <link>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/43_jfrog_setup/434_configure_jfrog.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jfrogtraining.github.io/aws-ecs-workshop/4_workshop_setup/43_jfrog_setup/434_configure_jfrog.html</guid>
+      <description>Now that we have the JFrog CLI installed and configured, we will use it to create the Artifactory NPM and docker repositories, Xray watches and policies. We will need these when we build and publish our NPM application later. The JFrog CLI uses the the JFrog Platform REST APIs. This is another way that you can manage and monitor the JFrog Platform.
+ In your Cloud9 terminal, change directory to the aws-modernization-with-jfrog directory.</description>
+    </item>
+    
+  </channel>
+</rss>

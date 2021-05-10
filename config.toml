@@ -1,0 +1,71 @@
+baseURL = "https://jfrogtraining.github.io/aws-ecs-workshop/"
+languageCode = "en-US"
+defaultContentLanguage = "en"
+
+title = "JFrog DevOps Modernization Workshop"
+theme = "hugo-theme-learn"
+metaDataFormat = "yaml"
+defaultContentLanguageInSubdir= "true"
+uglyurls = "true"
+enableEmoji = true
+sectionPagesMenu = "main"
+
+# for github pages https://github.com/gohugoio/hugo/issues/7714
+publishDir = "docs"
+canonifyurls = true
+
+[params]
+  # Prefix URL to edit current page. Will display an "Edit this page" button on top right hand corner of every page. 
+  # Useful to give opportunity to people to create merge request for your doc.
+  # See the config.toml file from this documentation site to have an example.
+  #editURL = ""
+  # Author of the site, will be used in meta information
+  author = "JFrog"
+  # Description of the site, will be used in meta information
+  description = "AWS Modernization Workshop"
+  # Shows a checkmark for visited pages on the menu
+  showVisitedLinks = true
+  # Disable search function. It will hide search bar
+  disableSearch = false
+  # Javascript and CSS cache are automatically busted when new version of site is generated. 
+  # Set this to true to disable this behavior (some proxies don't handle well this optimization)
+  disableAssetsBusting = false
+  # Set this to true to disable copy-to-clipboard button for inline code.
+  disableInlineCopyToClipBoard = false
+  # A title for shortcuts in menu is set by default. Set this to true to disable it. 
+  disableShortcutsTitle = false
+  # When using mulitlingual website, disable the switch language button.
+  disableLanguageSwitchingButton = true
+  # Hide breadcrumbs in the header and only show the current page title
+  disableBreadcrumb = false
+  # Hide Next and Previous page buttons normally displayed full height beside content
+  disableNextPrev = false
+  # Order sections in menu by "weight" or "title". Default to "weight"
+  ordersectionsby = "weight"
+  # Change default color scheme with a variant one. Can be "red", "blue", "green".
+  themeVariant = "mine"
+  assetDir = "static"
+
+[[menu.shortcuts]]
+name = "<i class='fas fa-trash-alt'></i> Cleanup"
+identifier = "cleanup"
+url = "cleanup.html"
+weight = 10
+
+[[menu.shortcuts]]
+name = "<i class='fab fa-fw fa-github'></i> GitHub repo"
+identifier = "repo"
+url = "https://github.com/aws-samples/aws-modernization-with-jfrog"
+weight = 20
+
+[[menu.shortcuts]]
+name = "<i class='fab fa-readme'></i> Resources"
+identifier = "resources"
+url = "resources.html"
+weight = 30
+
+
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
+page = [ "HTML", "AMP"]
+

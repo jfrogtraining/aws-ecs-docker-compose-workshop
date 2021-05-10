@@ -1,0 +1,22 @@
+ {
+   "general_data": {
+       "name": "npm-demo-prod-local_watch",
+       "description" : "A watch for npm-demo-prod-local repository",
+       "active": true
+   },
+   "project_resources" :  {
+     "resources":  [{ "type" : "repository",
+  "bin_mgr_id" : "default",
+  "name" : "npm-demo-prod-local"
+  
+}
+] 
+   },
+   "assigned_policies" : 
+      [  {
+    "type" : "security",
+    "name" : "demo-default-policy"
+  }
+] 
+   
+ } 

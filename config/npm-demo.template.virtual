@@ -1,0 +1,7 @@
+   {
+       "key" : "npm-demo",
+       "rclass" : "virtual",
+       "packageType" : "npm",
+       "repositories" : "npm-demo-dev-local,npm-demo-qa-local,npm-demo-prod-local,npm-remote",
+       "defaultDeploymentRepo" : "npm-demo-dev-local"
+   }

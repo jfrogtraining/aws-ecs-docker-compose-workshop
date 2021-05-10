@@ -1,0 +1,17 @@
+ {
+   "name": "demo-qa",
+   "repo":  {
+   "include-patterns": ["**"],
+   "exclude-patterns": [],
+   "repositories": ["docker-demo-qa-local","npm-demo-qa-local"],
+   "actions": {
+     "groups": {
+         "demo-readers" : ["read"] 
+, "demo-deployers" : ["read","annotate","write","delete"] 
+, "demo-managers" : ["read","annotate","write","delete","managedXrayMeta"] 
+
+     } 
+    }
+  } 
+  
+ } 

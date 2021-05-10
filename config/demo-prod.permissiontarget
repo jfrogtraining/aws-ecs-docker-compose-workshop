@@ -1,0 +1,17 @@
+ {
+   "name": "demo-prod",
+   "repo":  {
+   "include-patterns": ["**"],
+   "exclude-patterns": [],
+   "repositories": ["docker-demo-prod-local","npm-demo-prod-local"],
+   "actions": {
+     "groups": {
+         "demo-readers" : ["read"] 
+, "demo-deployers" : ["read","annotate","write"] 
+, "demo-managers" : ["read","annotate","write","managedXrayMeta"] 
+
+     } 
+    }
+  } 
+  
+ } 

@@ -1,0 +1,8 @@
+{
+  "key": "npm-remote",
+  "rclass" : "remote",
+  "packageType": "npm",
+  "xrayIndex":"true",
+  "url" : "https://registry.npmjs.org",
+  "externalDependenciesEnabled": "false"
+}

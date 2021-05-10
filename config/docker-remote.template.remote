@@ -1,0 +1,7 @@
+{
+  "key": "docker-remote",
+  "rclass" : "remote",
+  "xrayIndex":"true",
+  "packageType": "docker",
+  "url" : "https://registry-1.docker.io"
+}

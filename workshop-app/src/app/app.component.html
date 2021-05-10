@@ -1,0 +1,15 @@
+<a-scene background="color: #FAFAFA">
+  <a-assets>
+    <img id="jfrog" src="assets/img/jfrog-logo.png">
+    <img id="aws" src="assets/img/aws-logo.png">
+    <img id="docker" src="assets/img/docker-logo.png">
+    <img id="sky" src="assets/img/cloud.png">
+  </a-assets>
+  <a-entity camera look-controls cursor="rayOrigin: mouse" position="0 1.5 0"></a-entity>
+  <a-text position="2 2 -1.1" value="Build Num" color="black" anchor="center"></a-text>
+  <a-image position="1 1.2 -1" src="#jfrog" animation="property: rotation; to: 0 360 0; dur: 7000; easing: linear; loop: true"></a-image>
+  <a-image position="-1 1.2 -1" src="#aws" animation="property: rotation; to: 0 360 0; dur: 7000; easing: linear; loop: true"></a-image>
+  <a-image position="0 1.2 -1" src="#docker" animation="property: rotation; to: 0 360 0; dur: 7000; easing: linear; loop: true"></a-image>
+</a-scene>
+
+

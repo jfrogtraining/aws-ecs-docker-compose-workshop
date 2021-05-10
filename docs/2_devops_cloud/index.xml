@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DevOps in the Cloud on JFrog DevOps Modernization Workshop</title>
+    <link>https://jfrogtraining.github.io/aws-ecs-workshop/2_devops_cloud.html</link>
+    <description>Recent content in DevOps in the Cloud on JFrog DevOps Modernization Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language><atom:link href="https://jfrogtraining.github.io/aws-ecs-workshop/2_devops_cloud/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Continuous Integration and Delivery</title>
+      <link>https://jfrogtraining.github.io/aws-ecs-workshop/2_devops_cloud/21_continuous_integration_and_delivery.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jfrogtraining.github.io/aws-ecs-workshop/2_devops_cloud/21_continuous_integration_and_delivery.html</guid>
+      <description>Continuous integration and delivery (CI/CD) is the process for which your software components are built from code, integrated, tested, released, deployed and ultimately delivered to end-users. CI/CD pipelines are the software assembly line that orchestrates the building of your software. This CI/CD pipeline line requires infrastructure. Cloud computing has allowed this infrastructure to become dynamic and ephemeral. On cloud infrastructure, your CI/CD pipelines scale up and down to meet your software delivery demands.</description>
+    </item>
+    
+    <item>
+      <title>Binary Repository Management</title>
+      <link>https://jfrogtraining.github.io/aws-ecs-workshop/2_devops_cloud/22_binary_repository_management.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jfrogtraining.github.io/aws-ecs-workshop/2_devops_cloud/22_binary_repository_management.html</guid>
+      <description>A Binary Repository Manager is a software hub that simplifies the development process for different teams across an organization by helping them to collaborate on building coherent and compatible software components. It does this by centralizing the management of all the binary artifacts generated and used by the organization, thereby overcoming the incredible complexity arising from diverse binary artifact types, their position in the overall workflow and the set of dependencies between them.</description>
+    </item>
+    
+    <item>
+      <title>DevSecOps</title>
+      <link>https://jfrogtraining.github.io/aws-ecs-workshop/2_devops_cloud/23_dev_sec_ops.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jfrogtraining.github.io/aws-ecs-workshop/2_devops_cloud/23_dev_sec_ops.html</guid>
+      <description>Any security issue identified by a security scanning may be reviewed by a small security team that may lack the technical knowledge. This challenge can be reduced by shifting left to the developer and operations teams, making them also responsible for security and compliance. This moves security earlier in the software delivery process. Source code, dependency and artifact security scanning are some examples of moving security into the development process. Implementing the identification of security issues earlier in the CI/CD pipeline, as well as automating security and compliance policies in the Software Development Lifecycle (SDLC), rather than using manual processes, is crucial.</description>
+    </item>
+    
+    <item>
+      <title>JFrog Platform for DevOps in the Cloud</title>
+      <link>https://jfrogtraining.github.io/aws-ecs-workshop/2_devops_cloud/24_jfrog_platform_overview.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jfrogtraining.github.io/aws-ecs-workshop/2_devops_cloud/24_jfrog_platform_overview.html</guid>
+      <description>The JFrog Platform is designed to meet the growing needs of companies to develop and distribute software in the cloud. It provides DevOps teams with the tools needed to create, manage, secure and deploy software with ease. These tools cover everything from continuous integration and delivery (CI/CD), binary repository management, artifact maturity, security and vulnerability protection (DevSecOps), release management, analytics and distribution.
+JFrog Artifactory is an Artifact Repository Manager that fully supports software packages created by any language or technology.</description>
+    </item>
+    
+  </channel>
+</rss>

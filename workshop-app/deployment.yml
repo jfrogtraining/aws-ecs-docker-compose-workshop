@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  workshop-app
+spec:
+  selector:
+    matchLabels:
+      app:  workshop-app
+  template:
+    metadata:
+      labels:
+        app:  workshop-app
+    spec:
+      containers:
+        - name:  workshop-app
+          image: imageName # IMPORTANT: Update!
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 443
+              name: https
+            - containerPort: 80
+              name: http
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app:  workshop-app
+  name:  workshop-app
+spec:
+  type: LoadBalancer
+  ports:
+    - name: https
+      port: 443
+      protocol: TCP
+    - name: http
+      port: 80
+      protocol: TCP
+  selector:
+    app:  workshop-app

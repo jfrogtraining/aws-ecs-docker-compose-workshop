@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Configure ECS on JFrog DevOps Modernization Workshop</title>
+    <link>/5_deploy_ecs/51_configure_ecs.html</link>
+    <description>Recent content in Configure ECS on JFrog DevOps Modernization Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language><atom:link href="/5_deploy_ecs/51_configure_ecs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Configure AWS Secrets Manager for ECS</title>
+      <link>/5_deploy_ecs/51_configure_ecs/511_configure_ecs_secrets.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/5_deploy_ecs/51_configure_ecs/511_configure_ecs_secrets.html</guid>
+      <description>In the previous section, we set up JFrog Pipelines to authenticate and publish images to Artifactory. In the next sections, we will add the same Artifactory credentials to AWS Secrets Manager. We will then use an IAM Role to allow Amazon ECS to authenticate with Artifactory, pull the image and deploy it.
+Private registry authentication for ECS tasks using AWS Secrets Manager enables you to store your credentials securely and then reference them in your container definition.</description>
+    </item>
+    
+    <item>
+      <title>Configure an IAM Role for ECS</title>
+      <link>/5_deploy_ecs/51_configure_ecs/512_configure_ecs_role.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/5_deploy_ecs/51_configure_ecs/512_configure_ecs_role.html</guid>
+      <description>We now have our Artifactory credentials in the AWS Secrets Manager. Next, we must create an IAM role that will allow ECS to access our Artifactory secrets and deploy our image.
+Before you can launch ECS container instances and register them into a cluster, you must create an IAM role for those container instances to use when they are launched. The Amazon ECS container agent makes calls to the Amazon ECS API on your behalf using this role.</description>
+    </item>
+    
+  </channel>
+</rss>

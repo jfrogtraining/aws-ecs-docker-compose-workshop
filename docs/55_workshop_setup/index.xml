@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Workshop Setup on JFrog Workshop</title>
+    <link>https://jefferyfry.github.io/aws-modernization-with-jfrog/55_workshop_setup.html</link>
+    <description>Recent content in Workshop Setup on JFrog Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language><atom:link href="https://jefferyfry.github.io/aws-modernization-with-jfrog/55_workshop_setup/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Start the Workshop...</title>
+      <link>https://jefferyfry.github.io/aws-modernization-with-jfrog/55_workshop_setup/10_start_workshop.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jefferyfry.github.io/aws-modernization-with-jfrog/55_workshop_setup/10_start_workshop.html</guid>
+      <description>Getting Started To start the workshop, follow one of the following depending on whether you are&amp;hellip;
+ &amp;hellip;running the workshop on your own, or &amp;hellip;attending an AWS hosted event  </description>
+    </item>
+    
+    <item>
+      <title>At an AWS Event</title>
+      <link>https://jefferyfry.github.io/aws-modernization-with-jfrog/55_workshop_setup/20_aws_event.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jefferyfry.github.io/aws-modernization-with-jfrog/55_workshop_setup/20_aws_event.html</guid>
+      <description>To complete this workshop, you are provided with an AWS account via the AWS Event Engine service. A 12-digit hash will be provided to you by event staff - this is your unique access code. eg:
+e8476543c00e Create AWS Account 1 . Connect to the portal by clicking the button or browsing to https://dashboard.eventengine.run/. The following screen shows up. Enter the provided hash in the text box. The button on the bottom right corner changes to Accept Terms &amp;amp; Login.</description>
+    </item>
+    
+    <item>
+      <title>Set up your Cloud9 IDE</title>
+      <link>https://jefferyfry.github.io/aws-modernization-with-jfrog/55_workshop_setup/40_cloud9.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jefferyfry.github.io/aws-modernization-with-jfrog/55_workshop_setup/40_cloud9.html</guid>
+      <description>AWS Cloud9 is a cloud-based integrated development environment (IDE) that lets you write, run, and debug your code with just a browser. It includes a code editor, debugger, and terminal. Cloud9 comes prepackaged with essential tools for popular programming languages, including JavaScript, Python, PHP, and more, so you don’t need to install files or configure your development machine to start new projects.
+Add a new Cloud9 IDE environment 1 . Within the AWS console, use the region drop list to select us-west-2 (Oregon).</description>
+    </item>
+    
+    <item>
+      <title>Create an IAM role for your workspace</title>
+      <link>https://jefferyfry.github.io/aws-modernization-with-jfrog/55_workshop_setup/50_create_role.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jefferyfry.github.io/aws-modernization-with-jfrog/55_workshop_setup/50_create_role.html</guid>
+      <description>Starting from here, when you see command to be entered such as below, you will enter these commands into Cloud9 IDE. You can use the Copy to clipboard feature (right hand upper corner) to simply copy and paste into Cloud9. In order to paste, you can use Ctrl + V for Windows or Command + V for Mac.
+  Follow this deep link to create an IAM role with Administrator access.</description>
+    </item>
+    
+    <item>
+      <title>Attach the IAM role to your Workspace</title>
+      <link>https://jefferyfry.github.io/aws-modernization-with-jfrog/55_workshop_setup/60_attach_role_workspace.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jefferyfry.github.io/aws-modernization-with-jfrog/55_workshop_setup/60_attach_role_workspace.html</guid>
+      <description> Follow this deep link to find your Cloud9 EC2 instance. Select the instance, then choose Actions ► Instance Settings ► Attach/Replace IAM Role.  Choose Jfrog-Workshop-Admin from the IAM Role drop down, and select Apply.   </description>
+    </item>
+    
+    <item>
+      <title>Update IAM settings for your Workspace</title>
+      <link>https://jefferyfry.github.io/aws-modernization-with-jfrog/55_workshop_setup/70_update_iam_settings.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jefferyfry.github.io/aws-modernization-with-jfrog/55_workshop_setup/70_update_iam_settings.html</guid>
+      <description>Cloud9 normally manages IAM credentials dynamically. This isn&amp;rsquo;t currently compatible with the EKS IAM authentication, so we will disable it and rely on the IAM role instead.
+  Return to your workspace and click the gear icon (in top right corner), or click to open a new tab and choose Open Preferences. Select AWS SETTINGS. Turn off AWS managed temporary credentials. Close the Preferences tab.   Let&amp;rsquo;s run the command below, the following actions will take place as we do that:</description>
+    </item>
+    
+    <item>
+      <title>Get a Free JFrog Platform Instance</title>
+      <link>https://jefferyfry.github.io/aws-modernization-with-jfrog/55_workshop_setup/80_jfrog_free.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jefferyfry.github.io/aws-modernization-with-jfrog/55_workshop_setup/80_jfrog_free.html</guid>
+      <description> Use the JFrog Platform Cloud Free Tier to get your own JFrog Platform instance with Artifactory, Xray and Pipelines.   JFrog Platform Cloud Free Tier   </description>
+    </item>
+    
+  </channel>
+</rss>

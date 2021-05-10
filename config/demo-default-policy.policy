@@ -1,0 +1,24 @@
+{
+  "name" : "demo-default-policy",
+  "description": "demo-default-policy policy",
+    "type" : "security",
+  "rules" : [{  "criteria" : { "min_severity" : "high" }
+,
+  "name" : "rule_1",
+  "priority":1,
+  "actions": {
+    
+      "block_download" : {
+    "active" : false,
+    "unscanned" : false
+  },
+
+    "block_release_bundle_distribution" : false, 
+    "fail_build" : false, 
+    "notify_deployer" : false, 
+    "notify_watch_recipients" : false 
+  }
+}
+] 
+
+}

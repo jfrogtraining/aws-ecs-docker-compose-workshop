@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JFrog Platform Setup on JFrog DevOps Modernization Workshop</title>
+    <link>/3_workshop_setup/33_jfrog_setup.html</link>
+    <description>Recent content in JFrog Platform Setup on JFrog DevOps Modernization Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language><atom:link href="/3_workshop_setup/33_jfrog_setup/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Get a Free JFrog Platform Instance</title>
+      <link>/3_workshop_setup/33_jfrog_setup/321_jfrog_free.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/3_workshop_setup/33_jfrog_setup/321_jfrog_free.html</guid>
+      <description>If you do not have access to a JFrog Platform instance, use the JFrog Platform Cloud Free Tier to get your own JFrog Platform instance with Artifactory and Xray.
+ JFrog Platform Cloud Free Tier   </description>
+    </item>
+    
+    <item>
+      <title>Generate an API Key</title>
+      <link>/3_workshop_setup/33_jfrog_setup/322_api_key.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/3_workshop_setup/33_jfrog_setup/322_api_key.html</guid>
+      <description>The JFrog Platform offers a universal solution supporting all major package formats including Alpine, Maven, Gradle, Docker, Conda, Conan, Debian, Go, Helm, Vagrant, YUM, P2, Ivy, NuGet, PHP, NPM, RubyGems, PyPI, Bower, CocoaPods, GitLFS, Opkg, SBT and more.
+  Go to your JFrog Platform instance at https://[server name].jfrog.io. Refer to your JFrog Free Subscription Activation email if needed. Substitute your server name.  Login to your JFrog Platform instance with your credentials.</description>
+    </item>
+    
+    <item>
+      <title>Install and Configure the JFrog CLI</title>
+      <link>/3_workshop_setup/33_jfrog_setup/323_jfrog_cli.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/3_workshop_setup/33_jfrog_setup/323_jfrog_cli.html</guid>
+      <description>JFrog CLI is a client that provides a simple interface that automates access to JFrog products simplifying your automation scripts and making them more readable and easier to maintain. JFrog CLI works with JFrog Artifactory, JFrog Mission Control, JFrog Bintray and JFrog Xray (through their respective REST APIs) making your scripts more efficient and reliable. You can use the JFrog CLI to assist in your builds, create artifacts, promote artifacts, trigger security scans and much more.</description>
+    </item>
+    
+    <item>
+      <title>Configure JFrog Artifactory and Xray</title>
+      <link>/3_workshop_setup/33_jfrog_setup/324_configure_jfrog.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/3_workshop_setup/33_jfrog_setup/324_configure_jfrog.html</guid>
+      <description>Now that we have</description>
+    </item>
+    
+  </channel>
+</rss>

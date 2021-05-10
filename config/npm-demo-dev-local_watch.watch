@@ -1,0 +1,22 @@
+ {
+   "general_data": {
+       "name": "npm-demo-dev-local_watch",
+       "description" : "A watch for npm-demo-dev-local repository",
+       "active": true
+   },
+   "project_resources" :  {
+     "resources":  [{ "type" : "repository",
+  "bin_mgr_id" : "default",
+  "name" : "npm-demo-dev-local"
+  
+}
+] 
+   },
+   "assigned_policies" : 
+      [  {
+    "type" : "security",
+    "name" : "demo-default-policy"
+  }
+] 
+   
+ } 

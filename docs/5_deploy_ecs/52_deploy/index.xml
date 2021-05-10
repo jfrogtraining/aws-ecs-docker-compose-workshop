@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JFrog Setup on JFrog DevOps Modernization Workshop</title>
+    <link>/5_deploy_ecs/52_deploy.html</link>
+    <description>Recent content in JFrog Setup on JFrog DevOps Modernization Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language><atom:link href="/5_deploy_ecs/52_deploy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deploy Your Image with ECS</title>
+      <link>/5_deploy_ecs/52_deploy/521_deploy_your_image.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/5_deploy_ecs/52_deploy/521_deploy_your_image.html</guid>
+      <description>We are now ready to deploy your image with Amazon ECS. If not yet created, Amazon ECS can create a new VPC and ECS cluster as well as the other components that are required to serve your application. Amazon ECS will then authenticate, pull the image from Artifactory and deploy the container to the ECS cluster.
+The Amazon ECS first-run wizard guides you through the process of getting started with Amazon ECS using the Fargate launch type.</description>
+    </item>
+    
+    <item>
+      <title>View Your Application</title>
+      <link>/5_deploy_ecs/52_deploy/522_view_your_application.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/5_deploy_ecs/52_deploy/522_view_your_application.html</guid>
+      <description>In the previous section, you deployed your image with Amazon ECS. Now let&amp;rsquo;s check it out!
+ When complete, click on your deployed service, npm-app-service.  Click on the Tasks tab.  Ensure the Last status shows RUNNING before going to the next step. Click on the deploy-npm-app task. On the Details page of the task, locate the Public IP.  In your browser, go to https://&amp;lt;Public IP&amp;gt; to view your deployed web application.</description>
+    </item>
+    
+  </channel>
+</rss>

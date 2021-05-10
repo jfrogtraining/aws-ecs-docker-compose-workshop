@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hands-On Lab on JFrog DevOps Modernization Workshop</title>
+    <link>/70_hands-on_lab.html</link>
+    <description>Recent content in Hands-On Lab on JFrog DevOps Modernization Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language><atom:link href="/70_hands-on_lab/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Configure the GitHub Integration</title>
+      <link>/70_hands-on_lab/20_configure_github_integration.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/70_hands-on_lab/20_configure_github_integration.html</guid>
+      <description>In order for JFrog Pipelines to get access to the code in your aws-modernization-with-jfrog repository, we must first set up a Pipelines GitHub integration. This allows Pipelines to authenticate and get access to your GitHub repositories. To do this, we create a GitHub Personal Access Token with the correct permissions.
+JFrog Pipelines can also integrate with other source code repositories such as GitHub Enterprise, BitBucket and GitLab.
+  Go to your GitHub Personal Access Tokens settings page.</description>
+    </item>
+    
+    <item>
+      <title>Configure the Artifactory Integration</title>
+      <link>/70_hands-on_lab/30_configure_artifactory_integration.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/70_hands-on_lab/30_configure_artifactory_integration.html</guid>
+      <description>Similar to the GitHub Integration, in the following steps you will configure an Artifactory Integration that allows JFrog Pipelines to also access your Artifactory repositories in order to publish your artifacts and build info. You will do this by creating an API key.
+Artifactory offers a universal solution supporting all major package formats including Alpine, Maven, Gradle, Docker, Conda, Conan, Debian, Go, Helm, Vagrant, YUM, P2, Ivy, NuGet, PHP, NPM, RubyGems, PyPI, Bower, CocoaPods, GitLFS, Opkg, SBT and more.</description>
+    </item>
+    
+    <item>
+      <title>Configure the Initialization Pipeline</title>
+      <link>/70_hands-on_lab/40_configure_initialization_pipeline.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/70_hands-on_lab/40_configure_initialization_pipeline.html</guid>
+      <description>Next, we will update the lab pipelines to add your new GitHub and Artifactory integrations. In previous steps, you forked and cloned the lab repository. We will modify the initialization pipeline in your forked repository to add these integrations.
+ In your local git directory, open aws-modernization-with-jfrog/jfrog_pipelines/init-jfrog.yml in your Cloud9 editor. Update the resources section of the file to use your new forked repository. Change the path and substitute your username.</description>
+    </item>
+    
+    <item>
+      <title>Configure the Pipeline Source</title>
+      <link>/70_hands-on_lab/50_configure_pipeline_source.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/70_hands-on_lab/50_configure_pipeline_source.html</guid>
+      <description>In these next steps, we will add the build pipelines as a JFrog Pipelines source. This will allow JFrog Pipelines to execute these pipelines automatically whenever there is a commit or manually as needed.
+A Pipeline Source represents a source control repository (such as GitHub or BitBucket) where Pipelines definition files can be found. A pipeline source connects to the repository through an integration.
+  In your JFrog Platform instance, go to Pipelines ► Pipeline Sources.</description>
+    </item>
+    
+    <item>
+      <title>Execute the Initialization Pipeline</title>
+      <link>/70_hands-on_lab/60_execute_initialization_pipeline.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/70_hands-on_lab/60_execute_initialization_pipeline.html</guid>
+      <description>The first pipeline that we will execute will initialize our environment. This pipeline will create users, groups, permissions, repositories, Xray policies and watches, Xray indexes and access federation. This prepares our JFrog Platform instance to run our NPM build pipeline.
+This pipeline initializes the JFrog Platform for the next build pipelines by creating the necessary users, repositories, permissions and Xray configuration. It does this by using the JFrog Platform REST APIs.</description>
+    </item>
+    
+    <item>
+      <title>Execute the NPM Build Pipeline</title>
+      <link>/70_hands-on_lab/70_execute_npm_build_pipeline.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/70_hands-on_lab/70_execute_npm_build_pipeline.html</guid>
+      <description>The npm_build pipeline builds our web application. This pipeline uses a NpmBuild Pipelines step build the user interface components. Next, it uses NpmPublish to publish the components. DockerBuild and DockerPush steps are used to build a Docker image and push it to Artifactory. It then scans the build using the XrayScan step. Then it pushes the produced artifacts to the &amp;ldquo;staging&amp;rdquo; repository in Artifactory along with all build information by using the PromoteBuild step.</description>
+    </item>
+    
+    <item>
+      <title>Conclusion</title>
+      <link>/70_hands-on_lab/120_conclusion.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/70_hands-on_lab/120_conclusion.html</guid>
+      <description>In this workshop, we demonstrated that using the JFrog Platform to create CI/CD pipelines to build an application, manage the artifacts, scan the artifacts for security vulnerabilities and license compliance, and publish the artifacts of your application to a staging repository. Then you used Amazon ECS to deploy your application so that end-users can access it. Now you have a basic understanding of the JFrog Platform as a modern DevOps cloud platform on AWS.</description>
+    </item>
+    
+  </channel>
+</rss>

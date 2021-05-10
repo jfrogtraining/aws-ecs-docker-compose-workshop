@@ -1,0 +1,22 @@
+ {
+   "general_data": {
+       "name": "demo-build_watch",
+       "description" : "A watch for all builds",
+       "active": true
+   },
+   "project_resources" :  { "resources":
+      [{ "type" : "all-builds",
+  "bin_mgr_id" : "default",
+  "name" : "all-builds"
+  
+}
+] 
+   },
+   "assigned_policies" : 
+      [  {
+    "type" : "security",
+    "name" : "demo-default-policy"
+  }
+] 
+   
+ } 

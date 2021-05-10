@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JFrog Platform Overview on JFrog Workshop</title>
+    <link>https://jefferyfry.github.io/aws-modernization-with-jfrog/20_jfrog_platform_overview.html</link>
+    <description>Recent content in JFrog Platform Overview on JFrog Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language><atom:link href="https://jefferyfry.github.io/aws-modernization-with-jfrog/20_jfrog_platform_overview/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
