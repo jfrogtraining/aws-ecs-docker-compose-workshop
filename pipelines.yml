@@ -158,5 +158,5 @@ pipelines:
             - echo $int_{{ .Values.Artifactory.creds }}_token
             - echo $int_{{ .Values.Artifactory.creds }}_username
             - docker login -u $int_{{ .Values.Artifactory.creds }}_username -p $int_{{ .Values.Artifactory.creds }}_token {{ .Values.Artifactory.server }}
-            - src ./ecs-deploy.sh
+            - ./ecs-deploy.sh
             - echo "Workshop App launched!"
