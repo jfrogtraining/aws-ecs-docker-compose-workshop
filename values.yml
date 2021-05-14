@@ -1,4 +1,5 @@
 Artifactory:
+  server: partnership-workshop-docker.jfrog.io
   intName: PartnershipArtifactory
   devRepo: workshop-docker-local
   prodRepo: workshop-docker-prod-local
