@@ -95,20 +95,20 @@ pipelines:
           outputResources:
             - name: promoted_frontend_build_info
       - name: backend_docker_build
-          type: DockerBuild
-          configuration:
-            affinityGroup: docker_build
-            dockerFileLocation: front-end
-            dockerFileName: Dockerfile
-            dockerImageName: { { .Values.backend.dockerImageName } }
-            dockerImageTag: ${run_number}
-            inputResources:
-              - name: gitRepo
-            integrations:
-              - name: { { .Values.Artifactory.intName } }
-          execution:
-            onSuccess:
-              - echo "Congrats the backend Docker image was built!"
+        type: DockerBuild
+        configuration:
+          affinityGroup: docker_build
+          dockerFileLocation: front-end
+          dockerFileName: Dockerfile
+          dockerImageName: { { .Values.backend.dockerImageName } }
+          dockerImageTag: ${run_number}
+          inputResources:
+            - name: gitRepo
+          integrations:
+            - name: { { .Values.Artifactory.intName } }
+        execution:
+          onSuccess:
+            - echo "Congrats the backend Docker image was built!"
       - name: backend_docker_push
         type: DockerPush
         configuration:
