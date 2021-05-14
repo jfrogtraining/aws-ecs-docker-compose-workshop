@@ -51,7 +51,7 @@ resources:
       buildNumber: ${run_number}
 
 pipelines:
-  - name: workshop_app_build
+  - name: aws_ecs_docker_compose_workshop_app_build
     steps:
       - name: frontend_docker_build
         type: DockerBuild
