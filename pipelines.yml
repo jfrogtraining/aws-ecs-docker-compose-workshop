@@ -2,7 +2,7 @@ template: true
 valuesFilePath: values.yml
 
 resources:
-  - name: gitRepo
+  - name: awsEcsDockerComposeRepo
     type: GitRepo
     configuration:
       path: {{ .Values.GitHub.path }}
@@ -62,7 +62,7 @@ pipelines:
           dockerImageName: {{ .Values.frontend.dockerImageName }}
           dockerImageTag: ${run_number}
           inputResources:
-            - name: gitRepo
+            - name: awsEcsDockerComposeRepo
           integrations:
             - name: {{ .Values.Artifactory.intName }}
         execution:
@@ -103,7 +103,7 @@ pipelines:
           dockerImageName: {{ .Values.backend.dockerImageName }}
           dockerImageTag: ${run_number}
           inputResources:
-            - name: gitRepo
+            - name: awsEcsDockerComposeRepo
           integrations:
             - name: {{ .Values.Artifactory.intName }}
         execution:
@@ -142,13 +142,13 @@ pipelines:
             - name: {{ .Values.AWS.intName }}
             - name: {{ .Values.Artifactory.creds }}
           inputResources:
-            - name: gitRepo
+            - name: awsEcsDockerComposeRepo
           inputSteps:
             - name: frontend_promote
             - name: backend_promote
         execution:
           onExecute:
-            - cd $res_gitRepo_resourcePath
+            - cd $res_awsEcsDockerComposeRepo_resourcePath
             - pwd
             - ls
             - curl -o aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2021-01-05/bin/linux/amd64/aws-iam-authenticator
