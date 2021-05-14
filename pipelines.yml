@@ -13,7 +13,7 @@ resources:
     type: Image
     configuration:
       registry: {{ .Values.Artifactory.intName }}
-      sourceRepository: { { .Values.Artifactory.devRepo } }
+      sourceRepository: {{ .Values.Artifactory.devRepo }}
       imageName: {{ .Values.frontend.dockerImageName }}
       imageTag: ${run_number}
       autoPull: true
@@ -33,7 +33,7 @@ resources:
     type: Image
     configuration:
       registry: {{ .Values.Artifactory.intName }}
-      sourceRepository: { { .Values.Artifactory.devRepo } }
+      sourceRepository: {{ .Values.Artifactory.devRepo }}
       imageName: {{ .Values.backend.dockerImageName }}
       imageTag: ${run_number}
       autoPull: true
@@ -74,7 +74,7 @@ pipelines:
           affinityGroup: docker_build
           autoPublishBuildInfo: true
           forceXrayScan: true
-          targetRepository: { { .Values.Artifactory.devRepo } }
+          targetRepository: {{ .Values.Artifactory.devRepo }}
           integrations:
             - name:  {{ .Values.Artifactory.intName }}
           inputSteps:
@@ -85,7 +85,7 @@ pipelines:
       - name: frontend_promote
         type: PromoteBuild
         configuration:
-          targetRepository:      { { .Values.Artifactory.prodRepo } }
+          targetRepository:      {{ .Values.Artifactory.prodRepo }}
           includeDependencies:   true
           status:                Passed
           comment:               Artifact passed Xray Scan
@@ -100,12 +100,12 @@ pipelines:
           affinityGroup: docker_build
           dockerFileLocation: front-end
           dockerFileName: Dockerfile
-          dockerImageName: { { .Values.backend.dockerImageName } }
+          dockerImageName: {{ .Values.backend.dockerImageName }}
           dockerImageTag: ${run_number}
           inputResources:
             - name: gitRepo
           integrations:
-            - name: { { .Values.Artifactory.intName } }
+            - name: {{ .Values.Artifactory.intName }}
         execution:
           onSuccess:
             - echo "Congrats the backend Docker image was built!"
@@ -115,9 +115,9 @@ pipelines:
           affinityGroup: docker_build
           autoPublishBuildInfo: true
           forceXrayScan: true
-          targetRepository: { { .Values.Artifactory.devRepo } }
+          targetRepository: {{ .Values.Artifactory.devRepo }}
           integrations:
-            - name: { { .Values.Artifactory.intName } }
+            - name: {{ .Values.Artifactory.intName }}
           inputSteps:
             - name: backend_docker_build
           outputResources:
@@ -126,7 +126,7 @@ pipelines:
       - name: backend_promote
         type: PromoteBuild
         configuration:
-          targetRepository: { { .Values.Artifactory.prodRepo } }
+          targetRepository: {{ .Values.Artifactory.prodRepo }}
           includeDependencies: true
           status: Passed
           comment: Artifact passed Xray Scan
