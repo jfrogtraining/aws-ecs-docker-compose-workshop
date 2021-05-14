@@ -1,0 +1,14 @@
+Artifactory:
+  intName: PartnershipArtifactory
+  devRepo: workshop-docker-local
+  prodRepo: workshop-docker-prod-local
+  creds: awsEcsDockerComposePullSecrets
+GitHub:
+  path: jfrogtraining/aws-ecs-docker-compose-workshop
+  gitProvider: jefferyfryGithub
+AWS:
+  intName: jeffAws
+frontend:
+  dockerImageName: partnership-workshop-docker.jfrog.io/frontend-app
+backend:
+  dockerImageName: partnership-workshop-docker.jfrog.io/backend-app

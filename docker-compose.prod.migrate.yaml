@@ -1,0 +1,9 @@
+services:
+  frontend:
+    image: partnership-workshop-docker.jfrog.io/frontend-app:${run_number}
+  backend:
+    image: partnership-workshop-docker.jfrog.io/backend-app:${run_number}
+    logging:
+      options:
+        mode: non-blocking # Default is blocking
+        max-buffer-size: 5m # Default is 1min

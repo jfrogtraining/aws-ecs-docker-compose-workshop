@@ -1,0 +1,159 @@
+template: true
+valuesFilePath: values.yml
+
+resources:
+  - name: gitRepo
+    type: GitRepo
+    configuration:
+      path: {{ .Values.GitHub.path }}
+      gitProvider: {{ .Values.GitHub.gitProvider }}
+      branches:
+        include: master
+  - name: frontend_image
+    type: Image
+    configuration:
+      registry: {{ .Values.Artifactory.intName }}
+      sourceRepository: { { .Values.Artifactory.devRepo } }
+      imageName: {{ .Values.frontend.dockerImageName }}
+      imageTag: ${run_number}
+      autoPull: true
+  - name: frontend_build_info
+    type: Buildinfo
+    configuration:
+      sourceArtifactory: {{ .Values.Artifactory.intName }}
+      buildName: frontend_build
+      buildNumber: ${run_number}
+  - name: promoted_frontend_build_info
+    type: Buildinfo
+    configuration:
+      sourceArtifactory: {{ .Values.Artifactory.intName }}
+      buildName: frontend_build
+      buildNumber: ${run_number}
+  - name: backend_image
+    type: Image
+    configuration:
+      registry: {{ .Values.Artifactory.intName }}
+      sourceRepository: { { .Values.Artifactory.devRepo } }
+      imageName: {{ .Values.backend.dockerImageName }}
+      imageTag: ${run_number}
+      autoPull: true
+  - name: backend_build_info
+    type: Buildinfo
+    configuration:
+      sourceArtifactory: {{ .Values.Artifactory.intName }}
+      buildName: backend_build
+      buildNumber: ${run_number}
+  - name: promoted_backend_build_info
+    type: Buildinfo
+    configuration:
+      sourceArtifactory: {{ .Values.Artifactory.intName }}
+      buildName: backend_build
+      buildNumber: ${run_number}
+
+pipelines:
+  - name: workshop_app_build
+    steps:
+      - name: frontend_docker_build
+        type: DockerBuild
+        configuration:
+          affinityGroup: docker_build
+          dockerFileLocation: front-end
+          dockerFileName: Dockerfile
+          dockerImageName: {{ .Values.frontend.dockerImageName }}
+          dockerImageTag: ${run_number}
+          inputResources:
+            - name: gitRepo
+          integrations:
+            - name: {{ .Values.Artifactory.intName }}
+        execution:
+          onSuccess:
+            - echo "Congrats the frontend Docker image was built!"
+      - name: frontend_docker_push
+        type: DockerPush
+        configuration:
+          affinityGroup: docker_build
+          autoPublishBuildInfo: true
+          forceXrayScan: true
+          targetRepository: { { .Values.Artifactory.devRepo } }
+          integrations:
+            - name:  {{ .Values.Artifactory.intName }}
+          inputSteps:
+            - name: frontend_docker_build
+          outputResources:
+            - name: frontend_image
+            - name: frontend_build_info
+      - name: frontend_promote
+        type: PromoteBuild
+        configuration:
+          targetRepository:      { { .Values.Artifactory.prodRepo } }
+          includeDependencies:   true
+          status:                Passed
+          comment:               Artifact passed Xray Scan
+          copy:                  true
+          inputResources:
+            - name: frontend_build_info
+          outputResources:
+            - name: promoted_frontend_build_info
+      - name: backend_docker_build
+          type: DockerBuild
+          configuration:
+            affinityGroup: docker_build
+            dockerFileLocation: front-end
+            dockerFileName: Dockerfile
+            dockerImageName: { { .Values.backend.dockerImageName } }
+            dockerImageTag: ${run_number}
+            inputResources:
+              - name: gitRepo
+            integrations:
+              - name: { { .Values.Artifactory.intName } }
+          execution:
+            onSuccess:
+              - echo "Congrats the backend Docker image was built!"
+      - name: backend_docker_push
+        type: DockerPush
+        configuration:
+          affinityGroup: docker_build
+          autoPublishBuildInfo: true
+          forceXrayScan: true
+          targetRepository: { { .Values.Artifactory.devRepo } }
+          integrations:
+            - name: { { .Values.Artifactory.intName } }
+          inputSteps:
+            - name: backend_docker_build
+          outputResources:
+            - name: backend_image
+            - name: backend_build_info
+      - name: backend_promote
+        type: PromoteBuild
+        configuration:
+          targetRepository: { { .Values.Artifactory.prodRepo } }
+          includeDependencies: true
+          status: Passed
+          comment: Artifact passed Xray Scan
+          copy: true
+          inputResources:
+            - name: backend_build_info
+          outputResources:
+            - name: promoted_backend_build_info
+      - name: ecs_deploy
+        type: Bash
+        configuration:
+          integrations:
+            - name: {{ .Values.AWS.intName }}
+            - name: {{ .Values.Artifactory.creds }}
+          inputResources:
+            - name: gitRepo
+          inputSteps:
+            - name: frontend_promote
+            - name: backend_promote
+        execution:
+          onExecute:
+            - cd $res_gitRepo_resourcePath
+            - pwd
+            - ls
+            - curl -o aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2021-01-05/bin/linux/amd64/aws-iam-authenticator
+            - chmod +x ./aws-iam-authenticator
+            - mkdir -p $HOME/bin && cp ./aws-iam-authenticator $HOME/bin/aws-iam-authenticator && export PATH=$PATH:$HOME/bin
+            - docker login -u int_{{ .Values.Artifactory.creds }}_username -p int_{{ .Values.Artifactory.creds }}_token
+            - src ./ecs-deploy.sh
+            - echo "Workshop App launched!"
