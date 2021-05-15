@@ -9,8 +9,8 @@ sudo ln -s $(which docker) /usr/local/bin/com.docker.cli
 ./docker/docker --context default ps
 sudo mv docker/docker /usr/local/bin/docker
 docker version
-docker context create ecs ecsDocker --from-env
-docker context use ecsDocker
+docker context create ecs ecsDocker${run_number} --from-env
+docker context use ecsDocker${run_number}
 docker compose -f docker-compose.yaml -f  docker-compose.prod.migrate.yaml -f docker-compose.prod.scaling.yaml
 docker compose ps
 #docker compose -f docker-compose.yaml -f  docker-compose.prod.migrate.yaml -f docker-compose.prod.scaling.yaml convert > aws-cloudformation.yaml
