@@ -155,7 +155,7 @@ pipelines:
             - aws configure set default.region {{ .Values.AWS.region }}
             - docker login -u $int_{{ .Values.Artifactory.creds }}_username -p $int_{{ .Values.Artifactory.creds }}_token {{ .Values.Artifactory.server }}
             - export AWS_ACCESS_KEY_ID=$int_{{ .Values.AWS.intName }}_accessKeyId
-            - export AWS_SECRET_ACCESS_KEY=$int_{{ .Values.AWS.intName }}_accessKeyId
+            - export AWS_SECRET_ACCESS_KEY=$int_{{ .Values.AWS.intName }}_secretAccessKey
             - chmod +x ./deploy.sh
             - ./deploy.sh
             - printenv
