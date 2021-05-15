@@ -9,10 +9,3 @@ sudo ln -s $(which docker) /usr/local/bin/com.docker.cli
 ./docker/docker --context default ps
 sudo mv docker/docker /usr/local/bin/docker
 docker version
-printenv
-docker context create ecs aws-ecs-docker-compose-workshop
-docker context ls
-
-docker context use aws-ecs-docker-compose-workshop
-
-docker compose -f docker-compose.yaml -f  docker-compose.prod.migrate.yaml -f docker-compose.prod.scaling.yaml up -d --verbose

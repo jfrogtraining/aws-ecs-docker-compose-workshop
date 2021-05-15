@@ -154,6 +154,12 @@ pipelines:
             - mkdir -p $HOME/bin && cp ./aws-iam-authenticator $HOME/bin/aws-iam-authenticator && export PATH=$PATH:$HOME/bin
             - aws configure set default.region {{ .Values.AWS.region }}
             - docker login -u $int_{{ .Values.Artifactory.creds }}_username -p $int_{{ .Values.Artifactory.creds }}_token {{ .Values.Artifactory.server }}
-            - chmod +x ./ecs-deploy.sh
-            - ./ecs-deploy.sh
+            - export AWS_ACCESS_KEY_ID=$res_{{ .Values.AWS.intName }}_accessKeyId
+            - export AWS_SECRET_ACCESS_KEY=$res_{{ .Values.AWS.intName }}_accessKeyId
+            - chmod +x ./install-docker.sh
+            - ./install-docker.sh
+            - printenv
+            - docker context create ecs aws-ecs-docker-compose-workshop --from-env
+            - docker context use aws-ecs-docker-compose-workshop
+            - docker compose -f docker-compose.yaml -f  docker-compose.prod.migrate.yaml -f docker-compose.prod.scaling.yaml up -d --verbose
             - echo "Workshop App launched!"
