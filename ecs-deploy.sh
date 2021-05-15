@@ -10,7 +10,7 @@ sudo ln -s $(which docker) /usr/local/bin/com.docker.cli
 sudo mv docker/docker /usr/local/bin/docker
 docker version
 printenv
-docker context create ecs aws-ecs-docker-compose-workshop --from-env
+docker context create ecs aws-ecs-docker-compose-workshop
 docker context ls
 
 docker context use aws-ecs-docker-compose-workshop
