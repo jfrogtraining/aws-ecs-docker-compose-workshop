@@ -12,6 +12,6 @@ docker version
 
 docker context create ecs aws-ecs-docker-compose-workshop --from-env
 
-docker context use aws-ecs-docker-compose-workshop
+docker context use aws-ecs-docker-compose-workshop --from-env
 
 docker compose -d -f docker-compose.yaml -f  docker-compose.prod.migrate.yaml -f docker-compose.prod.scaling.yaml up
