@@ -11,4 +11,4 @@ sudo mv docker/docker /usr/local/bin/docker
 docker version
 docker context create ecs ecsDocker --from-env
 docker context use ecsDocker
-docker compose -f docker-compose.yaml -f  docker-compose.prod.migrate.yaml -f docker-compose.prod.scaling.yaml up -d --capabilities CAPABILITY_IAM CAPABILITY_AUTO_EXPAND
+docker compose -f docker-compose.yaml -f  docker-compose.prod.migrate.yaml -f docker-compose.prod.scaling.yaml up -d
