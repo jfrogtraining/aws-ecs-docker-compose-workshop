@@ -9,6 +9,7 @@ GitHub:
   gitProvider: jefferyfryGithub
 AWS:
   intName: jeffAws
+  region: us-west-2
 frontend:
   dockerImageName: partnership-workshop-docker.jfrog.io/frontend-app
 backend:
