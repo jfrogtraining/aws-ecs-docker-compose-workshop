@@ -57,6 +57,7 @@ pipelines:
         type: DockerPush
         configuration:
           affinityGroup: docker_build
+          autoPublishBuildInfo: true
           forceXrayScan: true
           targetRepository: {{ .Values.Artifactory.devRepo }}
           integrations:
@@ -65,6 +66,7 @@ pipelines:
             - name: app_docker_build
           outputResources:
             - name: app_image
+            - name: app_build_info
       - name: publish_build_info
         type: PublishBuildInfo
         configuration:
