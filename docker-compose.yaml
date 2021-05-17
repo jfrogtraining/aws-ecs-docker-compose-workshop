@@ -1,6 +1,6 @@
 services:
   app:
-    image: partnership-workshop-docker.jfrog.io/frontend-app:${run_number}
+    image: partnership-workshop-docker.jfrog.io/ecs-docker-compose-workshop-app:${run_number}
     restart: always
     ports:
       - 443:443
