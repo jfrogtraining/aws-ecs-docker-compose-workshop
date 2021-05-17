@@ -10,7 +10,5 @@ GitHub:
 AWS:
   intName: jeffAws
   region: us-west-2
-frontend:
-  dockerImageName: partnership-workshop-docker.jfrog.io/frontend-app
-backend:
-  dockerImageName: partnership-workshop-docker.jfrog.io/backend-app
+app:
+  dockerImageName: partnership-workshop-docker.jfrog.io/workshop-app

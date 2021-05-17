@@ -11,7 +11,7 @@ sudo mv docker/docker /usr/local/bin/docker
 docker version
 docker context create ecs ecsDocker${run_number} --from-env
 docker context use ecsDocker${run_number}
-docker compose -f docker-compose.yaml -f  docker-compose.prod.migrate.yaml -f docker-compose.prod.scaling.yaml up
+docker compose -f docker-compose.yaml up
 docker compose ps
 #docker compose -f docker-compose.yaml -f  docker-compose.prod.migrate.yaml -f docker-compose.prod.scaling.yaml convert > aws-cloudformation.yaml
 #aws cloudformation create-stack --stack-name ecsDocker${run_number} --template-body file://aws-cloudformation.yaml --capabilities CAPABILITY_IAM CAPABILITY_AUTO_EXPAND

@@ -9,57 +9,37 @@ resources:
       gitProvider: {{ .Values.GitHub.gitProvider }}
       branches:
         include: master
-  - name: frontend_image
+  - name: app_image
     type: Image
     configuration:
       registry: {{ .Values.Artifactory.intName }}
       sourceRepository: {{ .Values.Artifactory.devRepo }}
-      imageName: {{ .Values.frontend.dockerImageName }}
+      imageName: {{ .Values.app.dockerImageName }}
       imageTag: ${run_number}
       autoPull: true
-  - name: frontend_build_info
+  - name: app_build_info
     type: Buildinfo
     configuration:
       sourceArtifactory: {{ .Values.Artifactory.intName }}
-      buildName: frontend_build
+      buildName: app_build
       buildNumber: ${run_number}
-  - name: promoted_frontend_build_info
+  - name: promoted_app_build_info
     type: Buildinfo
     configuration:
       sourceArtifactory: {{ .Values.Artifactory.intName }}
-      buildName: frontend_build
-      buildNumber: ${run_number}
-  - name: backend_image
-    type: Image
-    configuration:
-      registry: {{ .Values.Artifactory.intName }}
-      sourceRepository: {{ .Values.Artifactory.devRepo }}
-      imageName: {{ .Values.backend.dockerImageName }}
-      imageTag: ${run_number}
-      autoPull: true
-  - name: backend_build_info
-    type: Buildinfo
-    configuration:
-      sourceArtifactory: {{ .Values.Artifactory.intName }}
-      buildName: backend_build
-      buildNumber: ${run_number}
-  - name: promoted_backend_build_info
-    type: Buildinfo
-    configuration:
-      sourceArtifactory: {{ .Values.Artifactory.intName }}
-      buildName: backend_build
+      buildName: app_build
       buildNumber: ${run_number}
 
 pipelines:
   - name: aws_ecs_docker_compose_workshop_app_build
     steps:
-      - name: frontend_docker_build
+      - name: app_docker_build
         type: DockerBuild
         configuration:
           affinityGroup: docker_build
-          dockerFileLocation: frontend
+          dockerFileLocation: app
           dockerFileName: Dockerfile
-          dockerImageName: {{ .Values.frontend.dockerImageName }}
+          dockerImageName: {{ .Values.app.dockerImageName }}
           dockerImageTag: ${run_number}
           inputResources:
             - name: awsEcsDockerComposeRepo
@@ -67,8 +47,8 @@ pipelines:
             - name: {{ .Values.Artifactory.intName }}
         execution:
           onSuccess:
-            - echo "Congrats the frontend Docker image was built!"
-      - name: frontend_docker_push
+            - echo "Congrats the app Docker image was built!"
+      - name: app_docker_push
         type: DockerPush
         configuration:
           affinityGroup: docker_build
@@ -78,11 +58,11 @@ pipelines:
           integrations:
             - name:  {{ .Values.Artifactory.intName }}
           inputSteps:
-            - name: frontend_docker_build
+            - name: app_docker_build
           outputResources:
-            - name: frontend_image
-            - name: frontend_build_info
-      - name: frontend_promote
+            - name: app_image
+            - name: app_build_info
+      - name: app_promote
         type: PromoteBuild
         configuration:
           targetRepository:      {{ .Values.Artifactory.prodRepo }}
@@ -91,50 +71,9 @@ pipelines:
           comment:               Artifact passed Xray Scan
           copy:                  true
           inputResources:
-            - name: frontend_build_info
+            - name: app_build_info
           outputResources:
-            - name: promoted_frontend_build_info
-      - name: backend_docker_build
-        type: DockerBuild
-        configuration:
-          affinityGroup: docker_build
-          dockerFileLocation: backend
-          dockerFileName: Dockerfile
-          dockerImageName: {{ .Values.backend.dockerImageName }}
-          dockerImageTag: ${run_number}
-          inputResources:
-            - name: awsEcsDockerComposeRepo
-          integrations:
-            - name: {{ .Values.Artifactory.intName }}
-        execution:
-          onSuccess:
-            - echo "Congrats the backend Docker image was built!"
-      - name: backend_docker_push
-        type: DockerPush
-        configuration:
-          affinityGroup: docker_build
-          autoPublishBuildInfo: true
-          forceXrayScan: true
-          targetRepository: {{ .Values.Artifactory.devRepo }}
-          integrations:
-            - name: {{ .Values.Artifactory.intName }}
-          inputSteps:
-            - name: backend_docker_build
-          outputResources:
-            - name: backend_image
-            - name: backend_build_info
-      - name: backend_promote
-        type: PromoteBuild
-        configuration:
-          targetRepository: {{ .Values.Artifactory.prodRepo }}
-          includeDependencies: true
-          status: Passed
-          comment: Artifact passed Xray Scan
-          copy: true
-          inputResources:
-            - name: backend_build_info
-          outputResources:
-            - name: promoted_backend_build_info
+            - name: promoted_app_build_info
       - name: ecs_deploy
         type: Bash
         configuration:
@@ -144,8 +83,7 @@ pipelines:
           inputResources:
             - name: awsEcsDockerComposeRepo
           inputSteps:
-            - name: frontend_promote
-            - name: backend_promote
+            - name: app_promote
         execution:
           onExecute:
             - cd $res_awsEcsDockerComposeRepo_resourcePath

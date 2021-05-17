@@ -1,8 +1,0 @@
-server {
-    listen       3000;
-    server_name  localhost;
-    location / {
-        proxy_pass   http://backend:5000;
-    }
-
-}

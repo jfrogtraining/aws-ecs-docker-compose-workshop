@@ -1,46 +1,10 @@
 services:
-  db:
-    image: mysql:8.0.19
-    command: '--default-authentication-plugin=mysql_native_password'
-    restart: always
-    secrets:
-      - db-password
-    volumes:
-      - db-data:/var/lib/mysql
-    networks:
-      - backnet
-    environment:
-      - MYSQL_DATABASE=example
-      - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/db-password
-  backend:
-    build: 
-      context: ./backend
-    restart: always
-    secrets:
-      - db-password
-    # ports:
-    #   - 5000:5000
-    networks:
-      - backnet
-      - frontnet
-    depends_on:
-      - db
-  frontend:
-    build: 
-      context: ./frontend
+  app:
+    image: partnership-workshop-docker.jfrog.io/frontend-app:${run_number}
     restart: always
     ports:
-      - 3000:3000
+      - 443:443
     networks:
-      - frontnet
-    depends_on:
-      - backend
-volumes:
-  db-data:
-secrets:
-  db-password:
-    # This is mounted to /run/secrets/ onto the container using it
-    file: db/password.txt
+      - appnet
 networks:
-  backnet:
-  frontnet:
+  appnet:
