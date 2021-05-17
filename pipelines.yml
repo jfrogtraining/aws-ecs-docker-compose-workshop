@@ -48,6 +48,7 @@ pipelines:
         execution:
           onStart:
             - cd $res_git_repo_resourcePath
+            - ls
             - sed "s|Num|${run_number}|g" $res_git_repo_resourcePath/workshop-app/src/app/app.component.html > $res_git_repo_resourcePath/workshop-app/src/app/app.component.html.update
             - mv $res_git_repo_resourcePath/workshop-app/src/app/app.component.html $res_git_repo_resourcePath/workshop-app/src/app/app.component.html.orig
             - mv $res_git_repo_resourcePath/workshop-app/src/app/app.component.html.update $res_git_repo_resourcePath/workshop-app/src/app/app.component.html
