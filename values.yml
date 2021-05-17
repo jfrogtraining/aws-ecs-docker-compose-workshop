@@ -13,3 +13,4 @@ AWS:
 app:
   dockerImageName: partnership-workshop-docker.jfrog.io/ecs-docker-compose-workshop-app
   dockerFileLocation: workshop-app
+  buildName: ecs-docker-compose-workshop-app

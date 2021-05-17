@@ -21,13 +21,13 @@ resources:
     type: Buildinfo
     configuration:
       sourceArtifactory: {{ .Values.Artifactory.intName }}
-      buildName: app_build
+      buildName: {{ .Values.app.build_name }}
       buildNumber: ${run_number}
   - name: promoted_app_build_info
     type: Buildinfo
     configuration:
       sourceArtifactory: {{ .Values.Artifactory.intName }}
-      buildName: app_build
+      buildName: {{ .Values.app.build_name }}
       buildNumber: ${run_number}
 
 pipelines:
@@ -46,6 +46,11 @@ pipelines:
           integrations:
             - name: {{ .Values.Artifactory.intName }}
         execution:
+          onStart:
+            - cd $res_git_repo_resourcePath
+            - sed "s|Num|${run_number}|g" $res_git_repo_resourcePath/workshop-app/src/app/app.component.html > $res_git_repo_resourcePath/workshop-app/src/app/app.component.html.update
+            - mv $res_git_repo_resourcePath/workshop-app/src/app/app.component.html $res_git_repo_resourcePath/workshop-app/src/app/app.component.html.orig
+            - mv $res_git_repo_resourcePath/workshop-app/src/app/app.component.html.update $res_git_repo_resourcePath/workshop-app/src/app/app.component.html
           onSuccess:
             - echo "Congrats the app Docker image was built!"
       - name: app_docker_push
@@ -61,6 +66,12 @@ pipelines:
             - name: app_docker_build
           outputResources:
             - name: app_image
+      - name: publish_build_info
+        type: PublishBuildInfo
+        configuration:
+          inputSteps:
+            - name: app_docker_push
+          outputResources:
             - name: app_build_info
       - name: app_promote
         type: PromoteBuild
