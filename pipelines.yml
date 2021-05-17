@@ -21,13 +21,13 @@ resources:
     type: Buildinfo
     configuration:
       sourceArtifactory: {{ .Values.Artifactory.intName }}
-      buildName: {{ .Values.app.build_name }}
+      buildName: {{ .Values.app.buildName }}
       buildNumber: ${run_number}
   - name: promoted_app_build_info
     type: Buildinfo
     configuration:
       sourceArtifactory: {{ .Values.Artifactory.intName }}
-      buildName: {{ .Values.app.build_name }}
+      buildName: {{ .Values.app.buildName }}
       buildNumber: ${run_number}
 
 pipelines:
