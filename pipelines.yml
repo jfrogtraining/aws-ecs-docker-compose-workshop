@@ -106,5 +106,4 @@ pipelines:
             - export AWS_SECRET_ACCESS_KEY=$int_{{ .Values.AWS.intName }}_secretAccessKey
             - chmod +x ./deploy.sh
             - ./deploy.sh
-            - printenv
             - echo "Workshop App launched!"

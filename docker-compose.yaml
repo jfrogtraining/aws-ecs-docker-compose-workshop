@@ -3,8 +3,12 @@ services:
     image: partnership-workshop-docker.jfrog.io/ecs-docker-compose-workshop-app:${run_number}
     restart: always
     ports:
-      - 443:443
       - 80:80
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
     networks:
       - appnet
 networks:
