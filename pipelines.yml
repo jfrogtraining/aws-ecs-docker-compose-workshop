@@ -37,7 +37,7 @@ pipelines:
         type: DockerBuild
         configuration:
           affinityGroup: docker_build
-          dockerFileLocation: app
+          dockerFileLocation: {{ .Values.app.dockerFileLocation }}
           dockerFileName: Dockerfile
           dockerImageName: {{ .Values.app.dockerImageName }}
           dockerImageTag: ${run_number}

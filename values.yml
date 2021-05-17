@@ -11,4 +11,5 @@ AWS:
   intName: jeffAws
   region: us-west-2
 app:
-  dockerImageName: partnership-workshop-docker.jfrog.io/workshop-app
+  dockerImageName: partnership-workshop-docker.jfrog.io/ecs-docker-compose-workshop-app
+  dockerFileLocation: workshop-app
