@@ -12,7 +12,9 @@ docker version
 docker context create ecs ecsDocker${run_number} --from-env
 docker context use ecsDocker${run_number}
 docker compose -f docker-compose.yaml up
+while [ -z `docker-compose ps -q app` ] || [ -z `docker ps -q --no-trunc | grep $(docker-compose ps -q app)` ]
+echo "App is ready!"
 docker compose ps
-#docker compose -f docker-compose.yaml -f  docker-compose.prod.migrate.yaml -f docker-compose.prod.scaling.yaml convert > aws-cloudformation.yaml
-#aws cloudformation create-stack --stack-name ecsDocker${run_number} --template-body file://aws-cloudformation.yaml --capabilities CAPABILITY_IAM CAPABILITY_AUTO_EXPAND
+#docker compose -f docker-compose.yaml convert > aws-cloudformation.yaml
+#aws cloudformation create-stack --stack-name ecsDocker${run_number} --template-body file://aws-cloudformation.yaml
 #aws cloudformation wait stack-create-complete --stack-name ecsDocker${run_number}
