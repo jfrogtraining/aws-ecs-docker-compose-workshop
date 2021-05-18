@@ -12,9 +12,7 @@ docker version
 docker context create ecs ecsDocker${run_number} --from-env
 docker context use ecsDocker${run_number}
 docker compose -f docker-compose.yaml up
-docker ps
-docker inspect app
-until [ "docker inspect --format='{{.State.Running}}' app"]; do sleep 1; done;
+while [ -z "docker ps --filter status=running | grep app"]; do sleep 1; done;
 echo "App is ready!"
 docker compose ps
 #docker compose -f docker-compose.yaml convert > aws-cloudformation.yaml
