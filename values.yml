@@ -1,16 +1,16 @@
 Artifactory:
-  server: partnership-workshop-docker.jfrog.io
-  intName: PartnershipArtifactory
+  server: <your server> #change to your servername
+  intName: artifactory_integration
   devRepo: workshop-docker-local
   prodRepo: workshop-docker-prod-local
-  creds: awsEcsDockerComposePullSecrets
+  creds: pull_secrets
 GitHub:
-  path: jfrogtraining/aws-ecs-docker-compose-workshop
-  gitProvider: jefferyfryGithub
+  path: <github username>/aws-ecs-docker-compose-workshop #change to your github username
+  gitProvider: github_integration
 AWS:
-  intName: jeffAws
+  intName: aws_integration
   region: us-west-2
 app:
-  dockerImageName: partnership-workshop-docker.jfrog.io/ecs-docker-compose-workshop-app
+  dockerImageName: <your server>/workshop-docker/ecs-docker-compose-workshop-app #change to your servername
   dockerFileLocation: workshop-app
   buildName: ecs-docker-compose-workshop-app
