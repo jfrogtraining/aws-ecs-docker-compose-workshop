@@ -9,7 +9,7 @@ resources:
       gitProvider: {{ .Values.GitHub.gitProvider }}
       branches:
         include: master
-  - name: app_image
+  - name: awsEcsImage
     type: Image
     configuration:
       registry: {{ .Values.Artifactory.intName }}
@@ -17,13 +17,13 @@ resources:
       imageName: {{ .Values.app.dockerImageName }}
       imageTag: ${run_number}
       autoPull: true
-  - name: app_build_info
+  - name: awsEcsBuildInfo
     type: Buildinfo
     configuration:
       sourceArtifactory: {{ .Values.Artifactory.intName }}
       buildName: {{ .Values.app.buildName }}
       buildNumber: ${run_number}
-  - name: promoted_app_build_info
+  - name: promotedAwsEcsBuildInfo
     type: Buildinfo
     configuration:
       sourceArtifactory: {{ .Values.Artifactory.intName }}
@@ -65,15 +65,15 @@ pipelines:
           inputSteps:
             - name: app_docker_build
           outputResources:
-            - name: app_image
-            - name: app_build_info
+            - name: awsEcsImage
+            - name: awsEcsBuildInfo
       - name: publish_build_info
         type: PublishBuildInfo
         configuration:
           inputSteps:
             - name: app_docker_push
           outputResources:
-            - name: app_build_info
+            - name: awsEcsBuildInfo
       - name: app_promote
         type: PromoteBuild
         configuration:
@@ -83,9 +83,9 @@ pipelines:
           comment:               Artifact passed Xray Scan
           copy:                  true
           inputResources:
-            - name: app_build_info
+            - name: awsEcsBuildInfo
           outputResources:
-            - name: promoted_app_build_info
+            - name: promotedAwsEcsBuildInfo
       - name: ecs_deploy
         type: Bash
         configuration:
