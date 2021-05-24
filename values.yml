@@ -3,7 +3,6 @@ Artifactory:
   intName: artifactory_integration
   devRepo: workshop-docker-local
   prodRepo: workshop-docker-prod-local
-  creds: pull_secrets
 GitHub:
   path: jfrogtraining/aws-ecs-docker-compose-workshop #change to your github username
   gitProvider: github_integration

@@ -91,7 +91,7 @@ pipelines:
         configuration:
           integrations:
             - name: {{ .Values.AWS.intName }}
-            - name: {{ .Values.Artifactory.creds }}
+            - name: {{ .Values.Artifactory.intName }}
           inputResources:
             - name: awsEcsDockerComposeRepo
           inputSteps:
@@ -103,7 +103,7 @@ pipelines:
             - chmod +x ./aws-iam-authenticator
             - mkdir -p $HOME/bin && cp ./aws-iam-authenticator $HOME/bin/aws-iam-authenticator && export PATH=$PATH:$HOME/bin
             - aws configure set default.region {{ .Values.AWS.region }}
-            - docker login -u $int_{{ .Values.Artifactory.creds }}_username -p $int_{{ .Values.Artifactory.creds }}_token {{ .Values.Artifactory.server }}
+            - docker login -u $int_{{ .Values.Artifactory.intName }}_user -p $int_{{ .Values.Artifactory.intName }}_apikey {{ .Values.Artifactory.server }}
             - export AWS_ACCESS_KEY_ID=$int_{{ .Values.AWS.intName }}_accessKeyId
             - export AWS_SECRET_ACCESS_KEY=$int_{{ .Values.AWS.intName }}_secretAccessKey
             - chmod +x ./deploy.sh
